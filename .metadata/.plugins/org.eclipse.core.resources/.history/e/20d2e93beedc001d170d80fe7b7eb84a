@@ -1,0 +1,72 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+
+import com.example.demo.*;
+
+@RestController
+@SpringBootApplication
+public class ProductsController {
+
+	@Autowired
+	ProductsService productsService;
+
+	@Autowired
+	ProductsRepo productsRepo;
+
+	@PostMapping(value="/product", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> saveProduct(@RequestParam("image") MultipartFile file, 
+    		@RequestParam("pname") String name,
+    		@RequestParam("price") int price,
+    		@RequestParam("published") boolean published,
+    		@RequestParam("uname") String uname
+    		)
+    {
+    	productService.saveProductToDB(file, name, price,published, uname);
+    	return ResponseEntity.ok(new MessageResponse("Product registered successfully!"));
+    }
+
+	@GetMapping("/deleteProducts/{id}")
+	public String deleteProduct(@PathVariable("id") Long id) {
+
+		productsService.deleteProductById(id);
+		return "redirect:/listProducts.html";
+	}
+
+	@PostMapping("/updateName")
+	public String updateName(@RequestParam("id") Long id, @RequestParam("newName") String name) {
+		productsService.updateProductName(id, name);
+		return "redirect:/listProducts.html";
+	}
+
+	@PostMapping("/updateDescription")
+	public String updateDescription(@RequestParam("id") Long id, @RequestParam("newDescription") String description) {
+		productsService.updateProductDescription(id, description);
+		return "redirect:/listProducts.html";
+	}
+
+	@PostMapping("/updatePrice")
+	public String updatePrice(@RequestParam("id") Long id, @RequestParam("newPrice") String price) {
+		productsService.updateProductPrice(id, price);
+		return "redirect:/listProducts.html";
+	}
+	
+	@PostMapping("/updateCategory")
+	public String updateCategory(@RequestParam("id") Long id, @RequestParam("newCategory") String category) {
+		productsService.updateProductPrice(id, category);
+		return "redirect:/listProducts.html";
+	}
+
+	@GetMapping("/allproduct")
+	public List<Products> showProduct() {
+
+		return productsRepo.findAll();
+
+	}
+}

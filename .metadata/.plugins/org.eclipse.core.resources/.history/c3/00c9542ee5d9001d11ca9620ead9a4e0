@@ -1,0 +1,23 @@
+package com.example.demo.models;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+@Entity
+@Table(name="products")
+public class Products {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@NotBlank
+	@Size(max = 10)
+	private String name;
+	private String Description;
+	private int price;
+	private String category;
+}

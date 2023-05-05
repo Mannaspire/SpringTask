@@ -1,0 +1,12 @@
+package com.example.demo.models;
+
+@Entity
+@Table(name="products")
+public class Products {
+
+	private int id;
+	private String name;
+	private String Description;
+	private int price;
+	private String category;
+}

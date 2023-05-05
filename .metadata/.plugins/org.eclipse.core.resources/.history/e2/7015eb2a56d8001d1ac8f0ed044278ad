@@ -1,0 +1,24 @@
+package com.example.demo.controller;
+
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+	@Autowired
+	AuthenticationManager authenticationManager;
+
+	@Autowired
+	UserRepository userRepository;
+
+	@Autowired
+	RoleRepository roleRepository;
+
+	@Autowired
+	PasswordEncoder encoder;
+
+	@Autowired
+	JwtUtils jwtUtils;
+
+	
+}

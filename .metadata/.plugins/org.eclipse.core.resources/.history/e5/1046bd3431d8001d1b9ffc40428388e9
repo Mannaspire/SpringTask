@@ -1,0 +1,10 @@
+package com.example.demo.test;
+
+import org.springframework.boot.SpringApplication;
+
+public class Hello {
+
+	public String hello() {
+		return "Hello";
+	}
+}

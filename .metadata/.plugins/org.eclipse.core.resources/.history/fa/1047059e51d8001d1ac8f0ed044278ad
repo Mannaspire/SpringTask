@@ -1,0 +1,14 @@
+package com.example.demo.security.jwt;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AuthTokenFilter {
+
+	@Autowired
+	private JWTUtils jwtUtils;
+
+	@Autowired
+	private UserDetailsServiceImpl userDetailsService;
+
+	private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
+}

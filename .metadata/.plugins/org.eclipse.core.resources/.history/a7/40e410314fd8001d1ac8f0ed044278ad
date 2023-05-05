@@ -1,0 +1,9 @@
+package com.example.demo.repo;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RoleRepo extends JpaRepository<Role, Long>  {
+
+	Optional<Role> findByName(ERole name);
+}

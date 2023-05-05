@@ -1,0 +1,12 @@
+package com.example.demo.security.jwt;
+
+import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AuthEntryPointJWT implements AuthenticationEntryPoint {
+
+	private static final Logger logger = LoggerFactory.getLogger(AuthEntryPointJwt.class);
+	
+	
+}

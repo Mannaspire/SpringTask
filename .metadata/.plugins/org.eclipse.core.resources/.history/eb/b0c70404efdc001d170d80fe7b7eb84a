@@ -1,0 +1,16 @@
+package com.example.demo;
+
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProductsRepo extends CrudRepository<Products, Long> {
+
+	Optional<ProductImage> findByName(String fileName);
+	
+	List<Products> findAll();
+
+}

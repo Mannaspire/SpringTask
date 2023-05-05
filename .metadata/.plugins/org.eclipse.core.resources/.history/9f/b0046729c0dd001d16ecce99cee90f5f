@@ -1,0 +1,27 @@
+package com.example.demo.payload.response;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Lob;
+
+public class ProductResponse {
+	
+	private String name;
+	private byte[]  image;
+	private String description;
+	private String price;
+	private String category;
+	private String vendor;
+	
+	public ProductResponse(String name, byte[] image, String description, String price, String category,
+			String vendor) {
+		super();
+		this.name = name;
+		this.image = image;
+		this.description = description;
+		this.price = price;
+		this.category = category;
+		this.vendor = vendor;
+	}
+
+	
+}

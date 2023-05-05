@@ -1,0 +1,16 @@
+package com.example.demo.security.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+
+import com.example.demo.security.service.UserDetailsImpl;
+import com.example.demo.security.service.UserDetailsServiceImpl;
+
+@Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class WebConfig {
+
+	UserDetailsServiceImpl userDetailsServiceImpl;
+	
+	  private AuthEntryPointJWT unauthorizedHandler;
+}

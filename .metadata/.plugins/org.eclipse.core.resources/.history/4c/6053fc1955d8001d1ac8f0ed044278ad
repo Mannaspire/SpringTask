@@ -1,0 +1,16 @@
+package com.example.demo.security.jwt;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class JWTUtils {
+
+	private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
+
+	@Value("${aspire.app.jwtSecret}")
+	private String jwtSecret;
+
+	@Value("${aspire.app.jwtExpirationMs}")
+	private int jwtExpirationMs;
+
+}

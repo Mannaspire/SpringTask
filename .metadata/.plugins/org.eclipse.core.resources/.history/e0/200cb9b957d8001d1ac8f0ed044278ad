@@ -1,0 +1,20 @@
+package com.example.demo.payload.request;
+
+public class LoginRequest {
+
+	String username;
+	String password;
+	
+	public  LoginRequest() {
+	
+	}
+
+	public LoginRequest(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+	
+	
+
+}

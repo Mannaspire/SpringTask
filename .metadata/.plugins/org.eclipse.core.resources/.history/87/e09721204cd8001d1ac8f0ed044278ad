@@ -1,0 +1,12 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "roles")
+public class Role {
+
+	private Integer  id;
+	private ERole name;
+}
